@@ -1,17 +1,18 @@
 console.log("Array Practice");
 
-//5. Joining and Splitting
+//6. Copying and Extracting
 
-//join(): Joins all elements into a string, separated by a specified character.
-console.log("join()");
-let arr = [1, 2, 3];
-let str = arr.join("-"); // "1-2-3"
+//slice(): Returns a shallow copy of a portion of the array.
+console.log("slice()");
+let arr = [1, 2, 3, 4];
+let subArray = arr.slice(1, 3); // [2, 3]
 console.log("original array",arr);
-console.log("joined string",str); 
+console.log("Shallow copy ",subArray); 
 
-//split(): Splits a string into an array based on a delimiter.
-console.log("split()");
-let str1 = "1,2,3";
-let arr1 = str1.split(","); // [1, 2, 3]
-console.log("original string",str1);
-console.log("joined array",arr1); 
+//splice(): Adds/removes elements from a specific index.
+console.log("splice()");
+let arr1 = [1, 2, 3];
+console.log("original array",arr1);
+arr1.splice(1, 1, 99); // [1, 99, 3]
+// (1,1,99): index=1, how many elements to remove=1, which new element to insert=99
+console.log("spliced array",arr1); 
