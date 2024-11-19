@@ -1,15 +1,21 @@
 console.log("Array Practice");
 
-//2. Iterating Over Arrays
+//3. Filtering and Searching
 
-//forEach(): Executes a function for each array element.
-console.log("forEach()");
-let arr = [1, 2, 3];
-arr.forEach(num => console.log(num)); // 1, 2, 3
+//filter(): Returns a new array with elements that satisfy a condition.
+console.log("filter()");
+let arr2 = [1, 2, 3, 4];
+let even = arr2.filter(num => num % 2 === 0); // [2, 4]
+console.log("even",even); 
 
-//map(): Creates a new array by applying a function to each element.
-console.log("map()");
-let arr1 = [1, 2, 3];
-let squaredarr = arr1.map(num => num * num); // [1, 4, 9]
-console.log("old array",arr1); 
-console.log("new squared array",squaredarr); 
+//find(): Returns the first element that satisfies a condition.
+console.log("find()");
+let arr3 = [1, 2, 3, 4];
+let greaterThan2 = arr3.find(num => num > 2); // 3
+console.log(greaterThan2);
+
+//findIndex(): Returns the index of the first element that satisfies a condition.
+console.log("findIndex()");
+let arr4 = [1, 2, 3, 4];
+let index = arr4.findIndex(num => num > 2); // 2
+console.log(index);
