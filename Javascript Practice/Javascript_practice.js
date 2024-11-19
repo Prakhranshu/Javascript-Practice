@@ -1,9 +1,29 @@
-console.log("Array Practice");
+console.log("String Practice");
 
-//8. Reducing
+//1. Finding and Searching
 
-//reduce(): Reduces the array to a single value by applying a function.
-console.log("reduce()");
-let arr = [1, 2, 3, 4];
-let sum = arr.reduce((acc, num) => acc + num, 0); // 10
-console.log("sum of array ",sum); 
+//charAt(index): Returns the character at the specified index.
+console.log("charAt()");
+let str = "Hello";
+console.log(str.charAt(1)); // "e"
+
+//indexOf(substring, start): Finds the first occurrence of a substring, starting from start (default is 0).
+console.log("indexOf()");
+let str1 = "Hello, world!";
+console.log(str1.indexOf("o")); // 4
+
+//lastIndexOf(substring, start): Finds the last occurrence of a substring, starting backward from start.
+console.log("lastIndexOf()");
+let str2 = "Hello, world!";
+console.log(str2.lastIndexOf("o")); // 8
+
+//includes(substring): Checks if a substring is present.
+console.log("includes()");
+let str3 = "Hello, world!";
+console.log(str3.includes("world")); // true
+
+//startsWith(substring) / endsWith(substring): Checks if a string starts/ends with a substring.
+console.log("startsWith() / endsWith()");
+let str4 = "Hello, world!";
+console.log(str4.startsWith("Hello")); // true
+console.log(str4.endsWith("!")); // true
