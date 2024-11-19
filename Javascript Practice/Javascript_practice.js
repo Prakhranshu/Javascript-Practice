@@ -1,15 +1,17 @@
 console.log("Array Practice");
 
-//2. Iterating Over Arrays
+//4. Sorting
 
-//forEach(): Executes a function for each array element.
-console.log("forEach()");
-let arr = [1, 2, 3];
-arr.forEach(num => console.log(num)); // 1, 2, 3
+//sort(): Sorts the array in place (modifies original array).
+console.log("sort()");
+let arr = [3, 1, 4, 2];
+console.log("original array",arr);
+arr.sort((a, b) => a - b); // [1, 2, 3, 4] 
+console.log("sorted array",arr); 
 
-//map(): Creates a new array by applying a function to each element.
-console.log("map()");
+//reverse(): Reverses the order of elements in the array.
+console.log("reverse()");
 let arr1 = [1, 2, 3];
-let squaredarr = arr1.map(num => num * num); // [1, 4, 9]
-console.log("old array",arr1); 
-console.log("new squared array",squaredarr); 
+console.log("original array",arr1);
+arr1.reverse(); // [3, 2, 1]
+console.log("reversed array",arr1); 
