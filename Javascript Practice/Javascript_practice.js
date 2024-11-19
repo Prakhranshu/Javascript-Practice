@@ -1,29 +1,30 @@
 console.log("String Practice");
 
-//1. Finding and Searching
+//2. Modifying Strings
 
-//charAt(index): Returns the character at the specified index.
-console.log("charAt()");
+//toUpperCase() / toLowerCase(): Converts the string to uppercase/lowercase.
+console.log("toUpperCase() / toLowerCase()");
 let str = "Hello";
-console.log(str.charAt(1)); // "e"
+console.log(str.toUpperCase()); // "HELLO"
+console.log(str.toLowerCase()); // "hello"
 
-//indexOf(substring, start): Finds the first occurrence of a substring, starting from start (default is 0).
-console.log("indexOf()");
-let str1 = "Hello, world!";
-console.log(str1.indexOf("o")); // 4
+//trim(): Removes whitespace from both ends of the string.
+console.log("trim()");
+let str1 = "   Hello   ";
+console.log(str1.trim()); // "Hello"
 
-//lastIndexOf(substring, start): Finds the last occurrence of a substring, starting backward from start.
-console.log("lastIndexOf()");
-let str2 = "Hello, world!";
-console.log(str2.lastIndexOf("o")); // 8
+//padStart(targetLength, padString) / padEnd(targetLength, padString): Pads the string to a specified length.
+console.log("padStart(targetLength, padString) / padEnd(targetLength, padString)");
+let str2 = "5";
+console.log(str2.padStart(3, "0")); // "005"
+console.log(str2.padEnd(3, "*"));  // "5**"
 
-//includes(substring): Checks if a substring is present.
-console.log("includes()");
+//replace(substring, newSubstring): Replaces the first occurrence of a substring.
+console.log("replace()");
 let str3 = "Hello, world!";
-console.log(str3.includes("world")); // true
+console.log(str3.replace("world", "JavaScript")); // "Hello, JavaScript!"
 
-//startsWith(substring) / endsWith(substring): Checks if a string starts/ends with a substring.
-console.log("startsWith() / endsWith()");
-let str4 = "Hello, world!";
-console.log(str4.startsWith("Hello")); // true
-console.log(str4.endsWith("!")); // true
+//replaceAll(substring, newSubstring): Replaces all occurrences of a substring.
+console.log("replaceAll()");
+let str4 = "banana";
+console.log(str4.replaceAll("a", "o")); // "bonono"
