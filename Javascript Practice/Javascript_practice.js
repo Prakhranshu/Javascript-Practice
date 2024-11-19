@@ -1,17 +1,17 @@
 console.log("Array Practice");
 
-//4. Sorting
+//5. Joining and Splitting
 
-//sort(): Sorts the array in place (modifies original array).
-console.log("sort()");
-let arr = [3, 1, 4, 2];
+//join(): Joins all elements into a string, separated by a specified character.
+console.log("join()");
+let arr = [1, 2, 3];
+let str = arr.join("-"); // "1-2-3"
 console.log("original array",arr);
-arr.sort((a, b) => a - b); // [1, 2, 3, 4] 
-console.log("sorted array",arr); 
+console.log("joined string",str); 
 
-//reverse(): Reverses the order of elements in the array.
-console.log("reverse()");
-let arr1 = [1, 2, 3];
-console.log("original array",arr1);
-arr1.reverse(); // [3, 2, 1]
-console.log("reversed array",arr1); 
+//split(): Splits a string into an array based on a delimiter.
+console.log("split()");
+let str1 = "1,2,3";
+let arr1 = str1.split(","); // [1, 2, 3]
+console.log("original string",str1);
+console.log("joined array",arr1); 
