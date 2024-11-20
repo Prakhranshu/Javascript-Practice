@@ -1,30 +1,24 @@
 console.log("String Practice");
 
-//2. Modifying Strings
+//3. Extracting Substrings
 
-//toUpperCase() / toLowerCase(): Converts the string to uppercase/lowercase.
-console.log("toUpperCase() / toLowerCase()");
-let str = "Hello";
-console.log(str.toUpperCase()); // "HELLO"
-console.log(str.toLowerCase()); // "hello"
+//slice(start, end): Extracts a portion of a string from start to end (not inclusive).
+console.log("slice()");
+let str = "JavaScript";
+console.log(str.slice(0, 4)); // "Java" (start at index 0, end before index 4)
+console.log(str.slice(-6, -1)); // "Scrip" (start 6th last to 2nd last)
 
-//trim(): Removes whitespace from both ends of the string.
-console.log("trim()");
-let str1 = "   Hello   ";
-console.log(str1.trim()); // "Hello"
+//substring(start, end): Purpose: Similar to slice but doesn’t support negative indexes. 
+//Special Behavior: Automatically swaps start and end if start > end.
+console.log("subtring()");
+let str1 = "JavaScript";
+console.log(str1.substring(0, 4)); // "Java" (same as slice for positive indices)
+console.log(str1.substring(4, 0)); // "Java" (swaps the indices)
+console.log(str1.substring(-3, 4)); // "Java" (treats -3 as 0)
 
-//padStart(targetLength, padString) / padEnd(targetLength, padString): Pads the string to a specified length.
-console.log("padStart(targetLength, padString) / padEnd(targetLength, padString)");
-let str2 = "5";
-console.log(str2.padStart(3, "0")); // "005"
-console.log(str2.padEnd(3, "*"));  // "5**"
-
-//replace(substring, newSubstring): Replaces the first occurrence of a substring.
-console.log("replace()");
-let str3 = "Hello, world!";
-console.log(str3.replace("world", "JavaScript")); // "Hello, JavaScript!"
-
-//replaceAll(substring, newSubstring): Replaces all occurrences of a substring.
-console.log("replaceAll()");
-let str4 = "banana";
-console.log(str4.replaceAll("a", "o")); // "bonono"
+//substr(start, length): Purpose: Extracts a substring starting at start and takes length characters from there.
+//Supports Negative Start: Counts from the end if start is negative.
+console.log("substr()");
+let str2 = "JavaScript";
+console.log(str2.substr(0, 4)); // "Java" (start at index 0, take 4 characters)
+console.log(str2.substr(-6, 4)); // "Scri" (start 6th last, take 4 characters)
