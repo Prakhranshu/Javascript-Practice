@@ -1,13 +1,8 @@
 console.log("String Practice");
 
-//4. Splitting and Joining
+//5. Checking Length
 
-//split(delimiter): Splits a string into an array based on a delimiter.
-console.log("split()");
-let str = "a,b,c";
-console.log(str.split(",")); // ["a", "b", "c"]
-
-//Joining (Using Array.join()): You can join strings back using .join() on arrays.
-console.log("Array.join()");
-let arr = ["a", "b", "c"];
-console.log(arr.join("-")); // "a-b-c"
+//length: Returns the number of characters in a string.
+console.log("str.length");
+let str = "Hello";
+console.log(str.length); // 5
