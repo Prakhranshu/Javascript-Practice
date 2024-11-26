@@ -1,24 +1,112 @@
-console.log("String Practice");
+class Parent {
+    constructor(name) {
+        this.name = name;
+    }
 
-//3. Extracting Substrings
+    greet() {
+        console.log(`Hello, I am ${this.name}`);
+    }
+}
 
-//slice(start, end): Extracts a portion of a string from start to end (not inclusive).
-console.log("slice()");
-let str = "JavaScript";
-console.log(str.slice(0, 4)); // "Java" (start at index 0, end before index 4)
-console.log(str.slice(-6, -1)); // "Scrip" (start 6th last to 2nd last)
+class Child extends Parent {
+    constructor(name, age) {
+        super(name); // Call the parent constructor
+        this.age = age;
+    }
 
-//substring(start, end): Purpose: Similar to slice but doesn’t support negative indexes. 
-//Special Behavior: Automatically swaps start and end if start > end.
-console.log("subtring()");
-let str1 = "JavaScript";
-console.log(str1.substring(0, 4)); // "Java" (same as slice for positive indices)
-console.log(str1.substring(4, 0)); // "Java" (swaps the indices)
-console.log(str1.substring(-3, 4)); // "Java" (treats -3 as 0)
+    showAge() {
+        console.log(`I am ${this.age} years old`);
+    }
+}
 
-//substr(start, length): Purpose: Extracts a substring starting at start and takes length characters from there.
-//Supports Negative Start: Counts from the end if start is negative.
-console.log("substr()");
-let str2 = "JavaScript";
-console.log(str2.substr(0, 4)); // "Java" (start at index 0, take 4 characters)
-console.log(str2.substr(-6, 4)); // "Scri" (start 6th last, take 4 characters)
+const child = new Child("Alice", 30);
+
+child.greet();   // Output: Hello, I am Alice
+child.showAge(); // Output: I am 30 years ol d
+
+function Test(){
+    document.getElementById("Prakhar").innerHTML = "Hello, I am Prakhar of Test Func";
+    document.getElementById("Prakhar").style.fontSize = "50px";
+    //document.getElementById('Prakhar').style.color = 'green';
+    document.getElementById('btn1').addEventListener("click",function(){
+        alert("Hello, I am Prakhar");
+    })
+}
+Test();
+
+let promise1 = new Promise(function(resolve, reject){
+    console.log("Hello, promise 1 is pending")
+    setTimeout(()=>{
+        //console.log("I am promise 1 in 5 sec...")
+        resolve(true)
+    },5000)
+})
+
+let promise2 = new Promise(function(resolve, reject){
+    console.log("Hello, promise 2 is pending")
+    setTimeout(()=>{
+        //console.log("I am promise 2 in 5 sec...")
+        reject(new Error("I am an error"))
+    },5000)
+})
+
+promise1.then((value)=>{
+    console.log(value)
+})
+
+// promise2.catch((error)=>{
+//     console.log("Somme error occured in Promise2")
+// })
+
+promise2.then((value)=>{
+    console.log(value)
+},(error)=>{
+    console.log("Some error occured in Promise2",error)
+});
+
+
+console.log(promise1)
+console.log(promise2)
+
+console.log("Hello 1");
+setTimeout(function(){
+    console.log("Hello in 3secs...");
+},3000)
+
+console.log("Hello 2");
+
+async function harry() {
+    let delhiWeather = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                    resolve("27 Deg")
+            }, 2000)
+    })
+
+    let bangaloreWeather = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                    resolve("21 Deg")
+            }, 5000)
+    })
+
+    // delhiWeather.then(alert)
+    // bangaloreWeather.then(alert)
+    console.log("Fetching Delhi Weather Please wait ...")
+    let delhiW = await delhiWeather
+    console.log("Fetched Delhi Weather: " + delhiW)
+    console.log("Fetching Bangalore Weather Please wait ...")
+    let bangaloreW = await bangaloreWeather
+    console.log("Fetched Bangalore Weather: " + bangaloreW)
+    return [delhiW, bangaloreW]
+}
+
+const cherry = async () => {
+    console.log("Hey I am cherry and I am waiting ")
+}
+
+const main1 = async () => {
+    console.log("Welcome to weather control room")
+    let a = await harry()
+    let b = await cherry()
+
+}
+main1()
