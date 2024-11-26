@@ -35,20 +35,35 @@ function Test(){
 Test();
 
 let promise1 = new Promise(function(resolve, reject){
-    console.log("Hello, I am Prakhar of promise 1")
+    console.log("Hello, promise 1 is pending")
     setTimeout(()=>{
-        console.log("I am promise 1 in 5 sec...")
+        //console.log("I am promise 1 in 5 sec...")
         resolve(true)
     },5000)
 })
 
 let promise2 = new Promise(function(resolve, reject){
-    console.log("Hello, I am Prakhar of promise 2")
+    console.log("Hello, promise 2 is pending")
     setTimeout(()=>{
-        console.log("I am promise 2 in 5 sec...")
+        //console.log("I am promise 2 in 5 sec...")
         reject(new Error("I am an error"))
     },5000)
 })
+
+promise1.then((value)=>{
+    console.log(value)
+})
+
+// promise2.catch((error)=>{
+//     console.log("Somme error occured in Promise2")
+// })
+
+promise2.then((value)=>{
+    console.log(value)
+},(error)=>{
+    console.log("Some error occured in Promise2",error)
+});
+
 
 console.log(promise1)
 console.log(promise2)
